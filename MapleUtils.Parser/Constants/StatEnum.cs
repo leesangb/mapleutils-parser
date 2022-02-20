@@ -41,5 +41,6 @@
         Meso,
         Drop,
         HpHeal,
+        Passive,
     }
 }

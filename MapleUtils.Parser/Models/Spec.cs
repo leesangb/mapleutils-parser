@@ -24,7 +24,7 @@ namespace MapleUtils.Parser.Models
         public int StarForce { get; init; }
         public int ArcaneForce { get; init; }
         public int AuthenticForce { get; init; }
-        public IDictionary<string, int> Abilities { get; init; }
+        public IDictionary<StatEnum, int> Abilities { get; init; }
         public IDictionary<StatEnum, int> Hypers { get; init; }
     }
 }
