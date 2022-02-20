@@ -1,0 +1,9 @@
+.vs
+node_modules
+*.DotSettings*
+bin
+obj
+*.user
+.idea
+build
+appsettings.*.json
