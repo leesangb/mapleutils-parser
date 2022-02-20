@@ -23,6 +23,7 @@
         Speed,
         Jump,
         IgnoreDef,
+        MobDmg,
         BossDmg,
         Dmg,
         AllStat,
