@@ -26,7 +26,7 @@ namespace MapleUtils.Parser.Test.Parsers
         [Test]
         public void Parse_Test()
         {
-            foreach (var (text, expectedSpec) in ExpectedSpec.ExpectedSpecs)
+            foreach (var (text, expectedSpec) in Expected.Specs)
             {
                 var result = SpecParser.Parse(text);
                 Assert.That(result, Is.EqualTo(expectedSpec));

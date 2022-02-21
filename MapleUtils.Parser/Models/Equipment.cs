@@ -12,7 +12,7 @@ namespace MapleUtils.Parser.Models
         /// <summary>
         /// 효과
         /// </summary>
-        public IList<KeyValuePair<StatEnum, int>> Effects { get; init; }
+        public IList<(StatEnum, int)> Effects { get; init; }
     }
     public abstract record EquipmentBase
     {
@@ -77,7 +77,7 @@ namespace MapleUtils.Parser.Models
         /// <summary>
         /// 소울
         /// </summary>
-        public KeyValuePair<StatEnum, int>? Soul { get; init; }
+        public (StatEnum, int)? Soul { get; init; }
     }
 
     public record CashEquipment : EquipmentBase
