@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Parsers\TestHelpers\Equipment1.txt">
+    <None Update="Parsers\TestHelpers\Ring1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Parsers\TestHelpers\Equipment10.txt">
@@ -52,7 +52,7 @@
     <None Update="Parsers\TestHelpers\Equipment19.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment2.txt">
+    <None Update="Parsers\TestHelpers\Hat1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Parsers\TestHelpers\Equipment20.txt">
@@ -73,7 +73,7 @@
     <None Update="Parsers\TestHelpers\Equipment25.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment3.txt">
+    <None Update="Parsers\TestHelpers\Emblem1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Parsers\TestHelpers\Equipment4.txt">
