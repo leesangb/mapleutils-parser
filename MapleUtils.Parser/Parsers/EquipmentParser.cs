@@ -62,6 +62,7 @@ namespace MapleUtils.Parser.Parsers
 
         private List<string> FixText(string text)
         {
+            // html에 보스 몬스터 공격시 라인 중간에 \n 가 있음
             return text.Replace("보스 몬스터\n공격 시 데미지", "보스 몬스터 공격 시 데미지").Split("\n").ToList();
         }
 
@@ -94,21 +95,40 @@ namespace MapleUtils.Parser.Parsers
             return category;
         }
 
+        private (StatEnum, int)? ParseSoul(List<string> lines)
+        {
+            var soulIndex = lines.FindLastIndex(l => l.StartsWith("소울 충전 시")) - 1;
+            var option = lines[soulIndex].Split(" : ");
+            if (option.Length == 2 && Stats.StatMapping.TryGetValue(option[0], out var key))
+            {
+                if (key == StatEnum.Atk && option[1].EndsWith("%"))
+                {
+                    return (StatEnum.AtkP, option[1].ParseInt());
+                }
+                else if (key == StatEnum.MAtk && option[1].EndsWith("%"))
+                {
+                    return (StatEnum.MAtkP, option[1].ParseInt());
+                }
+                else
+                {
+                    return (key, option[1].ParseInt());
+                }
+            }
+            return null;
+        }
+
         public Equipment Parse(string text)
         {
             var lines = FixText(text);
             var nameIndex = 0;
-            var soulIndex = -1;
 
             // 소울
             (StatEnum, int)? soul = null;
             var reqLevIndex = lines.FindIndex(l => l.StartsWith("REQ LEV"));
-            if (reqLevIndex == 3)
+            var hasSoul = reqLevIndex == 3; // 일반 아이템은 `xxx의` 가 없기 때문에 reqLevIndex가 2
+            if (hasSoul)
             {
-                soulIndex = lines.FindLastIndex(l => l.StartsWith("소울 충전 시")) - 1;
-                var option = lines[soulIndex].Split(" : ");
-                if (option.Length == 2 && Stats.StatMapping.TryGetValue(option[0], out var key))
-                    soul = (key, option[1].ParseInt());
+                soul = ParseSoul(lines);
                 nameIndex = 1;
             }
 
@@ -123,6 +143,7 @@ namespace MapleUtils.Parser.Parsers
             var baseStatStartIndex = categoryIndex + 1;
             if (lines[baseStatStartIndex] == "공격속도")
             {
+                // 공격속도가 있을경우 스탯이 2줄뒤부터 나옴
                 baseStatStartIndex += 2;
             }
             var baseStatEndIndex = lines.FindLastIndex(l => l.StartsWith("잠재옵션") || l.StartsWith("가위 사용 가능"));

@@ -34,7 +34,7 @@
     <None Update="Parsers\TestHelpers\Equipment13.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment14.txt">
+    <None Update="Parsers\TestHelpers\Weapon1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Parsers\TestHelpers\Equipment15.txt">

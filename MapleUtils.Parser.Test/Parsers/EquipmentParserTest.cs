@@ -18,6 +18,7 @@ namespace MapleUtils.Parser.Test.Parsers
         [TestCase(EquipmentsKeys.Ring1)]
         [TestCase(EquipmentsKeys.Hat1)]
         [TestCase(EquipmentsKeys.EyeAccessory1)]
+        [TestCase(EquipmentsKeys.Weapon1)]
         public void Parse_Test(EquipmentsKeys keyToTest)
         {
             var (text, expectedEquipment) = Expected.Equipments[keyToTest];

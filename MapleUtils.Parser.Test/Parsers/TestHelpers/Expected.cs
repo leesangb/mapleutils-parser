@@ -12,6 +12,7 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
             Ring1,
             Hat1,
             EyeAccessory1,
+            Weapon1,
         }
 
 
@@ -177,6 +178,74 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                     }
                 },
                 ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KEPAJFND.png",
+            }),
+            [EquipmentsKeys.Weapon1] = (File.ReadAllText("Parsers/TestHelpers/Weapon1.txt"), new Equipment()
+            {
+                Name = "아케인셰이드 초선",
+                Category = "부채",
+                Star = 18,
+                Upgrade = 9,
+                Base = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Str] = 0,
+                    [StatEnum.Dex] = 100,
+                    [StatEnum.Int] = 0,
+                    [StatEnum.Luk] = 100,
+                    [StatEnum.Hp] = 0,
+                    [StatEnum.Mp] = 0,
+                    [StatEnum.Atk] = 276,
+                    [StatEnum.BossDmg] = 30,
+                    [StatEnum.IgnoreDef] = 20,
+                    [StatEnum.Dmg] = 0,
+                },
+                Flame = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Str] = 102,
+                    [StatEnum.Dex] = 0,
+                    [StatEnum.Int] = 36,
+                    [StatEnum.Luk] = 0,
+                    [StatEnum.Hp] = 0,
+                    [StatEnum.Mp] = 0,
+                    [StatEnum.Atk] = 170,
+                    [StatEnum.BossDmg] = 0,
+                    [StatEnum.IgnoreDef] = 0,
+                    [StatEnum.Dmg] = 6,
+                },
+                Scroll = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Str] = 0,
+                    [StatEnum.Dex] = 85,
+                    [StatEnum.Int] = 0,
+                    [StatEnum.Luk] = 121,
+                    [StatEnum.Hp] = 255,
+                    [StatEnum.Mp] = 255,
+                    [StatEnum.Atk] = 254,
+                    [StatEnum.BossDmg] = 0,
+                    [StatEnum.IgnoreDef] = 0,
+                    [StatEnum.Dmg] = 0,
+                },
+                Potential = new Potential()
+                {
+                    Grade = PotentialGradeEnum.Legendary,
+                    Effects = new List<(StatEnum, int)>()
+                    {
+                        (StatEnum.BossDmg, 40),
+                        (StatEnum.AtkP, 9),
+                        (StatEnum.IgnoreDef, 30),
+                    }
+                },
+                Additional = new Potential()
+                {
+                    Grade = PotentialGradeEnum.Unique,
+                    Effects = new List<(StatEnum, int)>()
+                    {
+                        (StatEnum.AtkP, 9),
+                        (StatEnum.AtkP, 6),
+                        (StatEnum.Crit, 6)
+                    }
+                },
+                Soul = (StatEnum.AtkP, 3),
+                ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KENLJHMD.png",
             })
         };
 
