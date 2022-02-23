@@ -60,9 +60,43 @@ namespace MapleUtils.Parser.Parsers
             return (key, option[1].ParseInt());
         }
 
+        private List<string> FixText(string text)
+        {
+            return text.Replace("보스 몬스터\n공격 시 데미지", "보스 몬스터 공격 시 데미지").Split("\n").ToList();
+        }
+
+        private Potential ParsePotentials(List<string> lines, bool isAdditional)
+        {
+            var key = isAdditional ? "에디셔널 잠재옵션" : "잠재옵션";
+            var potentialIndex = lines.FindLastIndex(l => l.StartsWith(key));
+            var hasPotential = !lines[potentialIndex + 1].StartsWith("해당 사항이 없습니다");
+
+            if (!hasPotential)
+            {
+                return null;
+            }
+
+            return new Potential()
+            {
+                Grade = PotentialGrade.Parse(lines[potentialIndex + 1].Split(" ")[0][1..].Trim()),
+                Effects = new List<(StatEnum, int)>()
+                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 2]))
+                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 3]))
+                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 4]))
+            };
+        }
+
+        private string ParseCategory(string line)
+        {
+            var category = line.Split(" | ")[1];
+            category = Regex.Replace(category, " \\(.*", "");
+
+            return category;
+        }
+
         public Equipment Parse(string text)
         {
-            var lines = text.Replace("보스 몬스터\n공격 시 데미지", "보스 몬스터 공격 시 데미지").Split("\n").ToList();
+            var lines = FixText(text);
             var nameIndex = 0;
             var soulIndex = -1;
 
@@ -83,8 +117,7 @@ namespace MapleUtils.Parser.Parsers
 
             // 장비 분류
             var categoryIndex = lines.FindIndex(l => l.StartsWith("장비분류"));
-            var category = lines[categoryIndex].Split(" | ")[1];
-            category = Regex.Replace(category, " \\(.*", "");
+            var category = ParseCategory(lines[categoryIndex]);
 
             // 옵션
             var baseStatStartIndex = categoryIndex + 1;
@@ -126,40 +159,10 @@ namespace MapleUtils.Parser.Parsers
                     flameStat[key] = fs;
                     scrollStat[key] = ss;
                 }
-
             }
 
-            // 잠재능력
-            var potentialIndex = lines.FindLastIndex(l => l.StartsWith("잠재옵션"));
-            var additionalIndex = lines.FindLastIndex(l => l.StartsWith("에디셔널 잠재옵션"));
-            var hasPotential = !lines[potentialIndex + 1].StartsWith("해당 사항이 없습니다");
-            var hasAdditional = !lines[additionalIndex + 1].StartsWith("해당 사항이 없습니다");
-
-            Potential potential = null;
-            Potential additional = null;
-
-            if (hasPotential)
-            {
-                potential = new Potential()
-                {
-                    Grade = PotentialGrade.Parse(lines[potentialIndex + 1].Split(" ")[0][1..].Trim()),
-                    Effects = new List<(StatEnum, int)>()
-                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 2]))
-                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 3]))
-                    .AddIfNotNull(ParsePotential(lines[potentialIndex + 4]))
-                };
-            }
-            if (hasAdditional)
-            {
-                additional = new Potential()
-                {
-                    Grade = PotentialGrade.Parse(lines[additionalIndex + 1].Split(" ")[0][1..].Trim()),
-                    Effects = new List<(StatEnum, int)>()
-                    .AddIfNotNull(ParsePotential(lines[additionalIndex + 2]))
-                    .AddIfNotNull(ParsePotential(lines[additionalIndex + 3]))
-                    .AddIfNotNull(ParsePotential(lines[additionalIndex + 4]))
-                };
-            }
+            var potential = ParsePotentials(lines, isAdditional: false);
+            var additional = ParsePotentials(lines, isAdditional: true);
 
             var equipment = new Equipment()
             {
