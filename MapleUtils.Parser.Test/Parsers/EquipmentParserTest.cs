@@ -1,6 +1,7 @@
 ﻿using MapleUtils.Parser.Parsers;
 using MapleUtils.Parser.Test.Parsers.TestHelpers;
 using NUnit.Framework;
+using static MapleUtils.Parser.Test.Parsers.TestHelpers.Expected;
 
 namespace MapleUtils.Parser.Test.Parsers
 {
@@ -14,10 +15,10 @@ namespace MapleUtils.Parser.Test.Parsers
             EquipmentParser = new EquipmentParser();
         }
 
-        [TestCase("모자1")]
-        [TestCase("반지1")]
-        [TestCase("눈장식1")]
-        public void Parse_Test(string keyToTest)
+        [TestCase(EquipmentsKeys.Ring1)]
+        [TestCase(EquipmentsKeys.Hat1)]
+        [TestCase(EquipmentsKeys.EyeAccessory1)]
+        public void Parse_Test(EquipmentsKeys keyToTest)
         {
             var (text, expectedEquipment) = Expected.Equipments[keyToTest];
 

@@ -5,11 +5,19 @@ using System.IO;
 
 namespace MapleUtils.Parser.Test.Parsers.TestHelpers
 {
-    internal static class Expected
+    public static class Expected
     {
-        internal static IDictionary<string, (string text, Equipment expectedEquipment)> Equipments = new Dictionary<string, (string text, Equipment expectedEquipment)>()
+        public enum EquipmentsKeys
         {
-            ["반지1"] = (File.ReadAllText("Parsers/TestHelpers/Ring1.txt"), new Equipment()
+            Ring1,
+            Hat1,
+            EyeAccessory1,
+        }
+
+
+        internal static IDictionary<EquipmentsKeys, (string text, Equipment expectedEquipment)> Equipments = new Dictionary<EquipmentsKeys, (string text, Equipment expectedEquipment)>()
+        {
+            [EquipmentsKeys.Ring1] = (File.ReadAllText("Parsers/TestHelpers/Ring1.txt"), new Equipment()
             {
                 Name = "웨폰퍼프 - L링",
                 Category = "반지",
@@ -42,7 +50,7 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                 },
                 ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KEODIGPH.png",
             }),
-            ["모자1"] = (File.ReadAllText("Parsers/TestHelpers/Hat1.txt"), new Equipment()
+            [EquipmentsKeys.Hat1] = (File.ReadAllText("Parsers/TestHelpers/Hat1.txt"), new Equipment()
             {
                 Name = "앱솔랩스 시프캡",
                 Category = "모자",
@@ -106,7 +114,7 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                 },
                 ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KEPCIOJJ.png",
             }),
-            ["눈장식1"] = (File.ReadAllText("Parsers/TestHelpers/EyeAccessory1.txt"), new Equipment()
+            [EquipmentsKeys.EyeAccessory1] = (File.ReadAllText("Parsers/TestHelpers/EyeAccessory1.txt"), new Equipment()
             {
                 Name = "블랙빈 마크",
                 Category = "눈장식",
@@ -173,9 +181,15 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
         };
 
 
-        internal static IDictionary<string, (string text, Spec expectedSpec)> Specs = new Dictionary<string, (string text, Spec expectedSpec)>()
+        public enum SpecsKeys
         {
-            ["스펙1"] = (File.ReadAllText("Parsers/TestHelpers/Spec1.txt"), new Spec()
+            Spec1,
+            Spec2,
+        }
+
+        internal static IDictionary<SpecsKeys, (string text, Spec expectedSpec)> Specs = new Dictionary<SpecsKeys, (string text, Spec expectedSpec)>()
+        {
+            [SpecsKeys.Spec1] = (File.ReadAllText("Parsers/TestHelpers/Spec1.txt"), new Spec()
             {
                 StatAtkLow = 5140180,
                 StatAtkHigh = 5711310,
@@ -196,7 +210,7 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                 StarForce = 241,
                 ArcaneForce = 1020,
             }),
-            ["스펙2"] = (File.ReadAllText("Parsers/TestHelpers/Spec2.txt"), new Spec()
+            [SpecsKeys.Spec2] = (File.ReadAllText("Parsers/TestHelpers/Spec2.txt"), new Spec()
             {
                 StatAtkLow = 33179520,
                 StatAtkHigh = 36461009,

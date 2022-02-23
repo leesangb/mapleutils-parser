@@ -4,6 +4,7 @@ using MapleUtils.Parser.Test.Parsers.TestHelpers;
 using NSubstitute;
 using NUnit.Framework;
 using System.Collections.Generic;
+using static MapleUtils.Parser.Test.Parsers.TestHelpers.Expected;
 
 namespace MapleUtils.Parser.Test.Parsers
 {
@@ -23,11 +24,11 @@ namespace MapleUtils.Parser.Test.Parsers
             SpecParser = new SpecParser(abilitiesParserMock, hyperStatsParserMock);
         }
 
-        [TestCase("스펙1")]
-        [TestCase("스펙2")]
-        public void Parse_Test(string keyToTest)
+        [TestCase(SpecsKeys.Spec1)]
+        [TestCase(SpecsKeys.Spec2)]
+        public void Parse_Test(SpecsKeys keyToTest)
         {
-            var (text, expectedSpec) = Expected.Specs[keyToTest];
+            var (text, expectedSpec) = Specs[keyToTest];
 
             var result = SpecParser.Parse(text);
             Assert.That(result, Is.EqualTo(expectedSpec));
