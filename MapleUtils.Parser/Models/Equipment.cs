@@ -1,4 +1,6 @@
 ﻿using MapleUtils.Parser.Constants;
+using MapleUtils.Parser.JsonConverters;
+using System.Text.Json.Serialization;
 
 namespace MapleUtils.Parser.Models
 {
@@ -12,6 +14,7 @@ namespace MapleUtils.Parser.Models
         /// <summary>
         /// 효과
         /// </summary>
+        [JsonConverter(typeof(EffectListConverter))]
         public IList<(StatEnum, int)> Effects { get; init; }
     }
     public abstract record EquipmentBase
@@ -77,6 +80,7 @@ namespace MapleUtils.Parser.Models
         /// <summary>
         /// 소울
         /// </summary>
+        [JsonConverter(typeof(EffectTupleConverter))]
         public (StatEnum, int)? Soul { get; init; }
     }
 
