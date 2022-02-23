@@ -23,14 +23,14 @@ namespace MapleUtils.Parser.Test.Parsers
             SpecParser = new SpecParser(abilitiesParserMock, hyperStatsParserMock);
         }
 
-        [Test]
-        public void Parse_Test()
+        [TestCase("스펙1")]
+        [TestCase("스펙2")]
+        public void Parse_Test(string keyToTest)
         {
-            foreach (var (text, expectedSpec) in Expected.Specs)
-            {
-                var result = SpecParser.Parse(text);
-                Assert.That(result, Is.EqualTo(expectedSpec));
-            }
+            var (text, expectedSpec) = Expected.Specs[keyToTest];
+
+            var result = SpecParser.Parse(text);
+            Assert.That(result, Is.EqualTo(expectedSpec));
         }
 
 
