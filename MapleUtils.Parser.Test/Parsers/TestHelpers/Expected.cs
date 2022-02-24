@@ -780,7 +780,6 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
             }),
         };
 
-
         public enum SpecsKeys
         {
             Spec1,
@@ -830,6 +829,38 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                 Jump = 123,
                 StarForce = 324,
                 ArcaneForce = 1350,
+            })
+        };
+
+        public enum ArcanesKeys
+        {
+            Arcane1,
+            Arcane2,
+        }
+
+        internal static IDictionary<ArcanesKeys, (string text, Symbol symbol)> Arcanes = new Dictionary<ArcanesKeys, (string text, Symbol symbol)>()
+        {
+            [ArcanesKeys.Arcane1] = (File.ReadAllText("Parsers/TestHelpers/Arcanes/Arcane1.txt"), new Symbol()
+            {
+                Name = "아케인심볼 : 소멸의 여로",
+                Level = 14,
+                Stat = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Luk] = 1600
+                },
+                Experience = 98,
+                RequiredExperience = 207,
+            }),
+            [ArcanesKeys.Arcane2] = (File.ReadAllText("Parsers/TestHelpers/Arcanes/Arcane2.txt"), new Symbol()
+            {
+                Name = "아케인심볼 : 츄츄 아일랜드",
+                Level = 15,
+                Stat = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Luk] = 1700
+                },
+                Experience = 199,
+                RequiredExperience = 236,
             })
         };
     }

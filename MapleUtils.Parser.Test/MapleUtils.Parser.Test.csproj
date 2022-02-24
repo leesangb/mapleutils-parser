@@ -19,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Parsers\TestHelpers\Arcanes\Arcane1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Parsers\TestHelpers\Arcanes\Arcane2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Parsers\TestHelpers\Equipments\Ring1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
