@@ -18,7 +18,7 @@ namespace MapleUtils.Parser.Parsers
 
         public Spec Parse(string text)
         {
-            var lines = text.Split("\n").Where(line => !string.IsNullOrWhiteSpace(line)).ToList();
+            var lines = text.Replace("\n", "\t").Split("\t").Where(line => !string.IsNullOrWhiteSpace(line)).ToList();
             var statAtk = lines[1].Split(" ~ ");
             var hyperStatIndex = lines.LastIndexOf("하이퍼스탯");
             var abilityLines = string.Join("\n", lines.Skip(ABILITY_START_LINE_INDEX).Take(hyperStatIndex - ABILITY_START_LINE_INDEX));
@@ -37,7 +37,7 @@ namespace MapleUtils.Parser.Parsers
                 CritDmg = lines[15].ParseInt(),
                 BossDmg = lines[17].ParseInt(),
                 IgnoreDef = lines[19].ParseInt(),
-                //Dmg = ??,
+                // Dmg = ??,
                 Resistance = lines[21].ParseInt(),
                 Stance = lines[23].ParseInt(),
                 Def = lines[25].ParseInt(),
