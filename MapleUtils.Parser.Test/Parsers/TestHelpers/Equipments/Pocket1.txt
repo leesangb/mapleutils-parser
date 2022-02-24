@@ -1,0 +1,39 @@
+핑크빛 성배 
+REQ LEV
+140
+REQ STR
+0
+REQ LUK
+0
+REQ DEX
+0
+REQ INT
+0
+착용 가능한 직업 | 초보자, 전사, 마법사, 궁수, 도적, 해적
+장비분류 | 포켓 아이템
+STR
++25 (5 + 20 + 0)
+DEX
++21 (5 + 16 + 0)
+INT
++5
+LUK
++89 (5 + 84 + 0)
+MaxHP
++50
+MaxMP
++50
+공격력
++5
+마력
++5
+올스탯
++4% (0% + 4%)
+잠재옵션
+해당 사항이 없습니다.
+에디셔널 잠재옵션
+해당 사항이 없습니다.
+기타
+교환 불가
+
+https://avatar.maplestory.nexon.com/ItemIcon/KEOEJHME.png

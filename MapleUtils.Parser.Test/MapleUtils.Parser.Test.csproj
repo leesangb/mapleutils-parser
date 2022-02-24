@@ -19,85 +19,55 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Parsers\TestHelpers\Ring1.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Ring1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\EyeAccessory1.txt">
+    <None Update="Parsers\TestHelpers\Equipments\EyeAccessory1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment11.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Earring1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment12.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Weapon1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment13.txt">
+    <None Update="Parsers\TestHelpers\Equipments\SubWeapon1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Weapon1.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Pocket1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment15.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Hat1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment16.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Gloves1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment17.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Shoes1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment18.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Android1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment19.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Heart1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Hat1.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Emblem1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment20.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Pendant1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment21.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Badge1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment22.txt">
+    <None Update="Parsers\TestHelpers\Equipments\Ring2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment23.txt">
+    <None Update="Parsers\TestHelpers\Specs\Spec1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Parsers\TestHelpers\Equipment24.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment25.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Emblem1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment5.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment6.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment7.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment8.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Equipment9.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Spec1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Parsers\TestHelpers\Spec2.txt">
+    <None Update="Parsers\TestHelpers\Specs\Spec2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

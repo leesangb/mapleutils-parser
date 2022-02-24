@@ -1,0 +1,37 @@
+크리스탈 웬투스 뱃지 
+REQ LEV
+130
+REQ STR
+0
+REQ LUK
+0
+REQ DEX
+0
+REQ INT
+0
+착용 가능한 직업 | 초보자, 전사, 마법사, 궁수, 도적, 해적
+장비분류 | 뱃지
+STR
++10
+DEX
++10
+INT
++10
+LUK
++10
+공격력
++5
+마력
++5
+이동속도
++10
+점프력
++10
+잠재옵션
+해당 사항이 없습니다.
+에디셔널 잠재옵션
+해당 사항이 없습니다.
+기타
+교환 불가
+
+https://avatar.maplestory.nexon.com/ItemIcon/KEOKJHGG.png

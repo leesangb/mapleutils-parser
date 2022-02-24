@@ -158,15 +158,27 @@ namespace MapleUtils.Parser.Parsers
                 var statValue = lines[i + 1];
                 StatEnum key;
 
-                if (option.StartsWith("Max") && statValue.Contains("%"))
+                if (option.StartsWith("Max"))
                 {
-                    key = option == "MaxHP" ? StatEnum.HpP : StatEnum.MpP;
-                    var value = statValue.ParseInt();
-                    baseStat[key] = value;
-                    flameStat[key] = 0;
-                    scrollStat[key] = 0;
+                    if (statValue.Contains("%"))
+                    {
+                        key = option == "MaxHP"
+                            ? StatEnum.HpP
+                            : StatEnum.MpP;
+                        var value = statValue.ParseInt();
+                        baseStat[key] = value;
+                        flameStat[key] = 0;
+                        scrollStat[key] = 0;
+                    }
+                    else if (Stats.StatMapping.TryGetValue(option, out key))
+                    {
+                        var (bs, fs, ss) = ParseStat(statValue);
+                        baseStat[key] = bs;
+                        flameStat[key] = fs;
+                        scrollStat[key] = ss;
+                    }
                 }
-                if (option.StartsWith("올") && statValue.Contains("%"))
+                else if (option.StartsWith("올") && statValue.Contains("%"))
                 {
                     var (bs, fs, ss) = ParseStat(statValue);
                     baseStat[StatEnum.AllStatP] = bs;
