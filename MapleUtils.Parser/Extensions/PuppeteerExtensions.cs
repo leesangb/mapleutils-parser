@@ -1,4 +1,5 @@
 ﻿using PuppeteerSharp;
+using System.Diagnostics;
 
 namespace MapleUtils.Parser.Extensions
 {
@@ -41,6 +42,8 @@ namespace MapleUtils.Parser.Extensions
             catch (Exception ex)
             {
                 var browserFetcher = new BrowserFetcher();
+                Console.WriteLine("headless 크로미움 다운받는중...");
+                Debug.WriteLine("headless 크로미움 다운받는중...");
                 var revisionInfo = browserFetcher.DownloadAsync().Result;
                 browser = Puppeteer.LaunchAsync(launchOptions).Result;
             }
