@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleUtils.Parser", "MapleUtils.Parser\MapleUtils.Parser.csproj", "{E917F605-F15B-413A-A2C5-935AB43DCEC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleUtils.Parser.Test", "MapleUtils.Parser.Test\MapleUtils.Parser.Test.csproj", "{C097769A-DFC3-48BF-9320-195DC131346E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MapleUtils.Parser.Test", "MapleUtils.Parser.Test\MapleUtils.Parser.Test.csproj", "{C097769A-DFC3-48BF-9320-195DC131346E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapleUtils.Parser.ConsoleApp", "MapleUtils.Parser.ConsoleApp\MapleUtils.Parser.ConsoleApp.csproj", "{F6F92FBD-51FF-444A-B5A2-0FF8401BB086}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C097769A-DFC3-48BF-9320-195DC131346E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C097769A-DFC3-48BF-9320-195DC131346E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C097769A-DFC3-48BF-9320-195DC131346E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F92FBD-51FF-444A-B5A2-0FF8401BB086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F92FBD-51FF-444A-B5A2-0FF8401BB086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F92FBD-51FF-444A-B5A2-0FF8401BB086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F92FBD-51FF-444A-B5A2-0FF8401BB086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

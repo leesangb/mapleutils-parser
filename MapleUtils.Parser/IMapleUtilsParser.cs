@@ -4,6 +4,6 @@ namespace MapleUtils.Parser
 {
     public interface IMapleUtilsParser
     {
-        Task<Character> GetCharacter(string nickName);
+        Task<Character> GetCharacterAsync(string nickName);
     }
 }

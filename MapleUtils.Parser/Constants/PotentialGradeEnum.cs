@@ -1,5 +1,8 @@
-﻿namespace MapleUtils.Parser.Constants
+﻿using System.Text.Json.Serialization;
+
+namespace MapleUtils.Parser.Constants
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PotentialGradeEnum
     {
         Nothing,

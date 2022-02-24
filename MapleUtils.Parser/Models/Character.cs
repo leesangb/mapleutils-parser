@@ -23,6 +23,7 @@
         public IList<Symbol> Authentics { get; init; }
         public Traits Traits { get; init; }
         public IList<CashEquipment> PetEquipments { get; init; }
+        public IList<EquipmentBase> OtherEquipments { get; init; }
 
         public Character() { }
 
