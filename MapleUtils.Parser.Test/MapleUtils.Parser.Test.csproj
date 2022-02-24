@@ -70,6 +70,12 @@
     <None Update="Parsers\TestHelpers\Equipments\Ring2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Parsers\TestHelpers\PetEquipments\Pet1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Parsers\TestHelpers\PetEquipments\Pet2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Parsers\TestHelpers\Specs\Spec1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -863,5 +863,49 @@ namespace MapleUtils.Parser.Test.Parsers.TestHelpers
                 RequiredExperience = 236,
             })
         };
+
+        public enum PetEquipmentsKeys
+        {
+            Pet1,
+            Pet2,
+        }
+
+        internal static IDictionary<PetEquipmentsKeys, (string text, CashEquipment equipment)> PetEquipments = new Dictionary<PetEquipmentsKeys, (string text, CashEquipment equipment)>()
+        {
+            [PetEquipmentsKeys.Pet1] = (File.ReadAllText("Parsers/TestHelpers/PetEquipments/Pet1.txt"), new CashEquipment()
+            {
+                Name = "푸른 밤 나비",
+                Category = "펫장비",
+                Upgrade = 7,
+                Base = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Atk] = 10,
+                    [StatEnum.MAtk] = 10
+                },
+                Scroll = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Atk] = 0,
+                    [StatEnum.MAtk] = 29
+                },
+                ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KEHCJAJA.png"
+            }),
+            [PetEquipmentsKeys.Pet2] = (File.ReadAllText("Parsers/TestHelpers/PetEquipments/Pet2.txt"), new CashEquipment()
+            {
+                Name = "루나 크리스탈 키",
+                Category = "펫장비",
+                Upgrade = 8,
+                Base = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Atk] = 10,
+                    [StatEnum.MAtk] = 10
+                },
+                Scroll = new Dictionary<StatEnum, int>()
+                {
+                    [StatEnum.Atk] = 0,
+                    [StatEnum.MAtk] = 34
+                },
+                ImageUrl = "https://avatar.maplestory.nexon.com/ItemIcon/KEGHJHOF.png"
+            }),
+        };
     }
 }
